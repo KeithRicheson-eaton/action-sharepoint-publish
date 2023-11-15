@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:  
     
-    - name: Step 1
-      run: echo Hello world
+    - name: Cloning repo
+      uses: actions/checkout@v3
 
-#    - name: Cloning repo
-#      uses: actions/checkout@v3
-#
-#    - name: Publish to Sharepoint
-#      run: |
-#        docker build . --file Dockerfile --tag kdr-e-publish-to-sharepoint-test:$(date +%s)
-#        docker run kdr-e-publish-to-sharepoint-test:$(date +%s)
+    - name: Publish to Sharepoint
+      env:
+        CLIENTID: ${{ secrets.SHAREPOINT_SOFTWARE_PLAYBOOK_CLIENTID }}
+        CLIENTSECRET: ${{ secrets.SHAREPOINT_SOFTWARE_PLAYBOOK_CLIENTSECRET }}
+      run: |
+        docker build . --file Dockerfile --tag kdr-publish-to-sharepoint-test:$(date +%s)
+        docker run kdr-publish-to-sharepoint-test:$(date +%s)
         
