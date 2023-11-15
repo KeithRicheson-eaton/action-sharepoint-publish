@@ -15,7 +15,7 @@ jobs:
         CLIENTID: ${{ secrets.SHAREPOINT_SOFTWARE_PLAYBOOK_CLIENTID }}
         CLIENTSECRET: ${{ secrets.SHAREPOINT_SOFTWARE_PLAYBOOK_CLIENTSECRET }}
       run: |
-        apt install npm
+        sudo apt install npm
         npm install
         node ./index.js
         
