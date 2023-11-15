@@ -1,0 +1,20 @@
+name: 'Sharepoint Sync'
+
+on: push
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:  
+    
+    - name: Step 1
+      run: echo Hello world
+
+#    - name: Cloning repo
+#      uses: actions/checkout@v3
+#
+#    - name: Publish to Sharepoint
+#      run: |
+#        docker build . --file Dockerfile --tag kdr-e-publish-to-sharepoint-test:$(date +%s)
+#        docker run kdr-e-publish-to-sharepoint-test:$(date +%s)
+        
