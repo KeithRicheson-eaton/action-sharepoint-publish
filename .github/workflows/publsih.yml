@@ -15,6 +15,7 @@ jobs:
         CLIENTID: ${{ secrets.SHAREPOINT_SOFTWARE_PLAYBOOK_CLIENTID }}
         CLIENTSECRET: ${{ secrets.SHAREPOINT_SOFTWARE_PLAYBOOK_CLIENTSECRET }}
       run: |
-        docker build . --file Dockerfile --tag kdr-publish-to-sharepoint-test:$(date +%s)
-        docker run kdr-publish-to-sharepoint-test:$(date +%s)
+        apt install npm
+        npm install
+        node ./index.js
         
