@@ -1,7 +1,7 @@
 const spsave = require("spsave").spsave;
 const fs = require("fs");
 
-const filePath = 'test.txt'
+const filePath = 'test.md'
 //const fileExtensionArr = filePath.split('.')
 //const fileExtension = `.${fileExtensionArr[fileExtensionArr.length - 1]}`
 //const sha = process.env.GITHUB_SHA.substring(0, 7)
@@ -21,7 +21,7 @@ let coreOptions = {
 
 let fileOptions = {
     folder: 'Shared Documents',
-    fileName: 'kdr_test.txt',
+    fileName: 'kdr_test.md',
     fileContent: fs.readFileSync(filePath),
 }
 
