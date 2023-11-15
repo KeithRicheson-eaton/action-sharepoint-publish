@@ -1,7 +1,7 @@
 const spsave = require("spsave").spsave;
 const fs = require("fs");
 
-const filePath = 'test.md'
+const filePath = 'CODING_STANDARD.md'
 //const fileExtensionArr = filePath.split('.')
 //const fileExtension = `.${fileExtensionArr[fileExtensionArr.length - 1]}`
 //const sha = process.env.GITHUB_SHA.substring(0, 7)
