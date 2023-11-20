@@ -1,5 +1,7 @@
 const spsave = require("spsave").spsave;
 
+console.log('Starting index')
+
 let creds = {
     clientId: process.env.CLIENTID,
     clientSecret: process.env.CLIENTSECRET,
@@ -15,7 +17,8 @@ let fileOptions = {
     base: process.env.BASE_PATH
 }
 
-console.log($fileOptions)
+console.log(fileOptions)
+console.log('calling spsave')
 
 spsave(coreOptions, creds, fileOptions)
     .then(() => {
