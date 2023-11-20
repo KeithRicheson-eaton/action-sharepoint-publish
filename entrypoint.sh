@@ -3,12 +3,8 @@
 # if the FILE_PATH exists then we will just be uploading the file
 if [[ -z $FILE_PATH ]]
 then
-    const sha = process.env.GITHUB_SHA.substring(0, 7)
-
-    const trimSlashes = (string) => {
-        return string.replace(new RegExp('/', 'g'), '_')
-    }
-    const fileName = `${trimSlashes(process.env.GITHUB_REPOSITORY)}_${sha}_.zip`,
+    sha=${GITHUB_SHA:0:7}
+    fileName=${GITHUB_REPOSITORY//\//_}_${sha}_.zip`,
 
     export FILE_PATH="/out/${fileName}"
     mkdir /out
