@@ -1,7 +1,5 @@
 #!/bin/sh -l
 
-echo "Starting entrypoint"
-
 # if the FILE_PATH exists then we will just be uploading the file
 if [[ -z "$FILE_PATH" ]]
 then
@@ -14,8 +12,6 @@ then
     echo "Creating archive";
     zip -r "$FILE_PATH" ./* -x .git/*
 fi
-
-echo "Ready to run index"
 
 # run the script to send to sharepoint
 node /app/index.js
