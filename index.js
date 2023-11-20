@@ -15,6 +15,8 @@ let fileOptions = {
     base: process.env.BASE_PATH
 }
 
+console.log($fileOptions)
+
 spsave(coreOptions, creds, fileOptions)
     .then(() => {
         console.log('Success')

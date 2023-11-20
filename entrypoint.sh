@@ -13,6 +13,8 @@ then
     zip -r "$FILE_PATH" ./* -x .git/*
 fi
 
+echo "Ready to run index"
+
 # run the script to send to sharepoint
 node /app/index.js
 [ $? -eq 0 ]  || exit 1
