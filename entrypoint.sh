@@ -4,7 +4,7 @@
 if [[ -z $FILE_PATH ]]
 then
     sha=${GITHUB_SHA:0:7}
-    fileName="${GITHUB_REPOSITORY//\//_}_${sha}_.zip",
+    fileName="${GITHUB_REPOSITORY//'/'/'_'}_${sha}_.zip",
 
     export FILE_PATH="/out/${fileName}"
     mkdir /out
