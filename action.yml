@@ -1,6 +1,6 @@
 # action.yml
 name: 'Publish to Sharepoint'
-description: 'Create a archive of the repository and upload it to a Sharepoint online via client id and secret'
+description: 'Create an archive of the repository (if needed) and upload it to a Sharepoint online via client id and secret'
 author: 'Olivier Brassard & Daniel Monaghan'
 branding:
   icon: 'upload-cloud'  
@@ -20,7 +20,10 @@ inputs:
     required: true
     default: "Shared documents"
   file_path: 
-    description: 'To upload a specific file instead of the whole repo, specify the path here'
+    description: 'To upload a specific file(s) instead of the whole repo, specify the path/glob here'
+    required: false
+  base_path: 
+    description: 'When using a glob in file_path, preserve directory structure relative to this base path'
     required: false
 runs:
   using: 'docker'
@@ -31,3 +34,4 @@ runs:
     CLIENTSECRET: ${{ inputs.sharepoint_client_secret }}
     LIB_FOLDER : ${{ inputs.library_folder }}
     FILE_PATH : ${{ inputs.file_path }}
+    BASE_PATH : ${{ inputs.base_path }}
