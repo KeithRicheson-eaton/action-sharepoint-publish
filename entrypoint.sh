@@ -1,7 +1,9 @@
 #!/bin/sh -l
 
+echo "Starting entrypoint"
+
 # if the FILE_PATH exists then we will just be uploading the file
-if [[ -z $FILE_PATH ]]
+if [[ -z "$FILE_PATH" ]]
 then
     sha=${GITHUB_SHA:0:7}
     fileName=${GITHUB_REPOSITORY//\//_}_${sha}_.zip

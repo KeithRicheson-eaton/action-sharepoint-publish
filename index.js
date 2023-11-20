@@ -13,7 +13,7 @@ let coreOptions = {
 
 let fileOptions = {
     folder: process.env.LIB_FOLDER,
-    glob: [ process.env.FILE_PATH ],
+    glob: process.env.FILE_PATH,
     base: process.env.BASE_PATH
 }
 
